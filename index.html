@@ -1,4 +1,4 @@
-[29.05.2026 23:26] CASPER: <!DOCTYPE html>
+[29.05.2026 23:42] CASPER: <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -10,18 +10,18 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Orbitron', 'Segoe UI', sans-serif; /* Тепер геймерський шрифт всюди */
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
         }
 
         body {
             background: #0a0a0f;
-            height: 100vh;
-            width: 100vw;
+            min-height: 100vh;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
 
@@ -52,43 +52,29 @@
             z-index: 2;
         }
 
-        /* Головна обгортка сайту */
+        /* Головний контейнер — тепер стоїть мертво по центру */
         .phone-wrapper {
             position: relative;
             z-index: 10;
-            width: 90%;
-            max-width: 340px;
+            width: 100%;
+            max-width: 360px; /* Ідеальна ширина, щоб текст не рвався */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .phone-wrapper {
-                max-width: 450px; /* Оптимальна ширина для ПК, щоб кнопки не розповзалися */
-            }
+            padding: 24px;
+            margin: auto; /* Центрування на будь-яких моніторах */
         }
 
         /* Логотип */
         .logo-container {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 15px;
+            width: 160px;
+            height: 160px;
+            margin-bottom: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .logo-container {
-                width: 200px;
-                height: 200px;
-                margin-bottom: 25px;
-            }
         }
 
         .clan-logo {
@@ -100,26 +86,19 @@
             box-shadow: 0 0 25px rgba(255, 102, 0, 0.4);
         }
 
-        /* Головний лого-текст N911 */
+        /* Напис N911 */
         .clan-neon-text {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 700;
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             text-shadow: 
                 0 0 5px #fff,
                 0 0 15px #ff6600,
                 0 0 30px #ff3300;
             animation: neonPulse 2s infinite alternate;
-        }
-
-        @media (min-width: 768px) {
-            .clan-neon-text {
-                font-size: 48px;
-                margin-bottom: 45px;
-            }
         }
 
         @keyframes neonPulse {
@@ -132,96 +111,83 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 20px; /* Трохи більший відступ для краси */
-            align-items: center;
+            gap: 18px;
         }
 
-        /* Базовий крутий стиль для всіх кнопок */
+        /* Кнопки */
         .btn {
             display: flex;
             align-items: center;
             justify-content: center; 
             gap: 14px;
             width: 100%;
-            padding: 18px;
+            padding: 16px 20px;
             text-decoration: none;
-            font-size: 16px;
-[29.05.2026 23:26] CASPER: font-weight: 700;
-            letter-spacing: 1.5px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
             border-radius: 16px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Пружна анімація вильоту */
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        @media (min-width: 768px) {
-            .btn {
-                padding: 20px;
-                font-size: 18px;
-            }
-        }
-
-        /* 1. ПОМАРАНЧЕВА КНОПКА (STANDOFF 2) */
+        /* 1. СТАНДОФФ (Помаранчева) */
         .btn-so2 {
             color: #ff8833;
             background: rgba(255, 102, 0, 0.05);
             border: 2px solid rgba(255, 102, 0, 0.25);
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.1), inset 0 0 10px rgba(255, 102, 0, 0.05);
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.05);
         }
-        .btn-so2:hover {
+        .
+[29.05.2026 23:42] CASPER: btn-so2:hover {
             color: #fff;
-            background: rgba(255, 102, 0, 0.25);
+            background: rgba(255, 102, 0, 0.2);
             border-color: #ff6600;
-            box-shadow: 0 0 30px rgba(255, 102, 0, 0.6), inset 0 0 15px rgba(255, 102, 0, 0.2);
+            box-shadow: 0 0 25px rgba(255, 102, 0, 0.5);
             text-shadow: 0 0 8px #ff6600;
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-3px);
         }
 
-        /* 2. БЛАКИТНА КНОПКА (TELEGRAM) */
+        /* 2. ТЕЛЕГРАМ (Блакитна) */
         .btn-telegram {
             color: #33b5ff;
             background: rgba(0, 136, 204, 0.05);
             border: 2px solid rgba(0, 136, 204, 0.25);
-            box-shadow: 0 0 15px rgba(0, 136, 204, 0.1), inset 0 0 10px rgba(0, 136, 204, 0.05);
+            box-shadow: 0 0 15px rgba(0, 136, 204, 0.05);
         }
         .btn-telegram:hover {
             color: #fff;
-            background: rgba(0, 136, 204, 0.25);
+            background: rgba(0, 136, 204, 0.2);
             border-color: #0088cc;
-            box-shadow: 0 0 30px rgba(0, 136, 204, 0.6), inset 0 0 15px rgba(0, 136, 204, 0.2);
+            box-shadow: 0 0 25px rgba(0, 136, 204, 0.5);
             text-shadow: 0 0 8px #0088cc;
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-3px);
         }
 
-        /* 3. НЕОНОВО-РОЖЕВА КНОПКА (TIKTOK) */
+        /* 3. ТІКТОК (Рожева) */
         .btn-tiktok {
             color: #ff3377;
             background: rgba(255, 0, 80, 0.05);
             border: 2px solid rgba(255, 0, 80, 0.25);
-            box-shadow: 0 0 15px rgba(255, 0, 80, 0.1), inset 0 0 10px rgba(255, 0, 80, 0.05);
+            box-shadow: 0 0 15px rgba(255, 0, 80, 0.05);
         }
         .btn-tiktok:hover {
             color: #fff;
-            background: rgba(255, 0, 80, 0.25);
+            background: rgba(255, 0, 80, 0.2);
             border-color: #ff0050;
-            box-shadow: 0 0 30px rgba(255, 0, 80, 0.6), inset 0 0 15px rgba(255, 0, 80, 0.2);
+            box-shadow: 0 0 25px rgba(255, 0, 80, 0.5);
             text-shadow: 0 0 8px #ff0050;
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-3px);
         }
 
-        /* Стилі для SVG іконок всередині кнопок */
+        /* Іконки SVG */
         .btn svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-        .btn:hover svg {
-            transform: rotate(-5deg) scale(1.1); /* Легкий ефектний поворот іконки при наведенні */
         }
     </style>
 </head>
@@ -251,8 +217,7 @@
 
             <a href="https://t.me/clan_N911" target="_blank" class="btn btn-telegram">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.
-[29.05.2026 23:26] CASPER: 64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.36-.49.99-.75 3.88-1.69 6.46-2.8 7.74-3.32 3.69-1.5 4.45-1.76 4.95-1.77.11 0 .36.03.52.16.13.1.17.24.19.34-.02.07-.02.16-.03.24z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.36-.49.99-.75 3.88-1.69 6.46-2.8 7.74-3.32 3.69-1.5 4.45-1.76 4.95-1.77.11 0 .36.03.52.16.13.1.17.24.19.34-.02.07-.02.16-.03.24z"/>
                 </svg>
                 ТГК N911
             </a>
