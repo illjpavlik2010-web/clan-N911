@@ -1,147 +1,4 @@
-[29.05.2026 23:15] CASPER: <!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N9II CLAN</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: #0a0a0f;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .video-bg-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .video-bg-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(16, 16, 24, 0.75) 0%, rgba(10, 10, 15, 0.95) 100%);
-            z-index: 2;
-        }
-
-        /* Контейнер під телефон — тепер усе зафіксовано строго по центру */
-        .phone-wrapper {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            max-width: 360px; /* Трохи звузили, щоб на будь-якому телефоні виглядало акуратно */
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center;     
-            padding: 20px;
-            animation: phoneFadeIn 1.2s ease-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes phoneFadeIn {
-            0% { opacity: 0; transform: scale(0.98); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        .logo-container {
-            width: 160px;
-            height: 160px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .clan-logo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ff6600; 
-            box-shadow: 0 0 25px rgba(255, 102, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .clan-logo:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 35px rgba(255, 102, 0, 0.7);
-        }
-
-        .clan-neon-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 35px;
-            text-align: center;
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 10px #ff6600,
-                0 0 20px #ff6600,
-                0 0 40px #ff3300;
-            animation: neonPulse 2s infinite alternate;
-        }
-
-        @keyframes neonPulse {
-            0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 40px #ff3300; }
-            100% { text-shadow: 0 0 7px #fff, 0 0 15px #ff8833, 0 0 30px #ff6600, 0 0 50px #ff3300; }
-        }
-
-        /* Блок з кнопками — тепер чітко центрує внутрішні елементи */
-        .links-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Вирівнює самі кнопки по центру */
-            gap: 16px;
-        }
-
-        /* Виправлені скляні кнопки */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center; 
-            gap: 12px;
-            width: 100%; /* Займають всю ширину телефонного контейнера */
-[29.05.2026 23:15] CASPER: max-width: 290px; /* Кнопки не будуть занадто широкими */
-            padding: 16px;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+[29.05.2026 23:21] CASPER: border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 14px;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -176,7 +33,7 @@
             width: 22px;
             height: 22px;
             fill: currentColor;
-            flex-shrink: 0; /* Щоб іконка не стискалася */
+            flex-shrink: 0;
         }
     </style>
 </head>
@@ -223,3 +80,137 @@
 
 </body>
 </html>
+[29.05.2026 23:21] CASPER: <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N9II CLAN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #0a0a0f;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Задній фон */
+        .video-bg-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .video-bg-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(16, 16, 24, 0.75) 0%, rgba(10, 10, 15, 0.95) 100%);
+            z-index: 2;
+        }
+
+        /* Головна обгортка — тепер залізобетонно центрована на будь-якому екрані */
+        .phone-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 340px; /* Ідеальний розмір для кнопок */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрує все всередині (лого, текст, кнопки) */
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            margin: 0 auto; /* Центрування на великих моніторах ПК */
+        }
+
+        /* Логотип */
+        .logo-container {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clan-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff6600; 
+            box-shadow: 0 0 25px rgba(255, 102, 0, 0.4);
+        }
+
+        /* Неоновий текст */
+        .clan-neon-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #ff6600,
+                0 0 20px #ff6600,
+                0 0 40px #ff3300;
+            animation: neonPulse 2s infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 40px #ff3300; }
+            100% { text-shadow: 0 0 7px #fff, 0 0 15px #ff8833, 0 0 30px #ff6600, 0 0 50px #ff3300; }
+        }
+
+        /* Список кнопок */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center; /* Строге вирівнювання кнопок по центру */
+        }
+
+        /* Кнопки */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            gap: 12px;
+            width: 100%; /* Займають рівно 100% від ширини контейнера phone-wrapper (тобто 340px) */
+            padding: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.03);
