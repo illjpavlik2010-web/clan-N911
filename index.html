@@ -1,4 +1,4 @@
-[29.05.2026 23:42] CASPER: <!DOCTYPE html>
+[29.05.2026 23:48] CASPER: <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -16,18 +16,15 @@
         body {
             background: #0a0a0f;
             min-height: 100vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100vw;
             color: #fff;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Задній фон */
+        /* ЗАДНІЙ ФОН - тепер зафіксований і не заважає центруванню */
         .video-bg-container {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -52,19 +49,21 @@
             z-index: 2;
         }
 
-        /* Головний контейнер — тепер стоїть мертво по центру */
+        /* ГОЛОВНИЙ БЛОК - тепер залізобетонно по центру екрана */
         .phone-wrapper {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 10;
             width: 100%;
-            max-width: 360px; /* Ідеальна ширина, щоб текст не рвався */
+            max-width: 360px; /* Ідеальний розмір для кнопок */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 24px;
-            margin: auto; /* Центрування на будь-яких моніторах */
+            padding: 20px;
         }
 
         /* Логотип */
@@ -86,7 +85,7 @@
             box-shadow: 0 0 25px rgba(255, 102, 0, 0.4);
         }
 
-        /* Напис N911 */
+        /* Текст N911 */
         .clan-neon-text {
             font-size: 38px;
             font-weight: 700;
@@ -106,7 +105,7 @@
             100% { text-shadow: 0 0 8px #fff, 0 0 20px #ff8833, 0 0 40px #ff3300; }
         }
 
-        /* Список кнопок */
+        /* Контейнер для кнопок */
         .links-container {
             width: 100%;
             display: flex;
@@ -114,7 +113,7 @@
             gap: 18px;
         }
 
-        /* Кнопки */
+        /* Стиль кнопок */
         .btn {
             display: flex;
             align-items: center;
@@ -133,16 +132,15 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* 1. СТАНДОФФ (Помаранчева) */
+        /* ПОМАРАНЧЕВА (STANDOFF 2) */
         .btn-so2 {
             color: #ff8833;
             background: rgba(255, 102, 0, 0.05);
             border: 2px solid rgba(255, 102, 0, 0.25);
             box-shadow: 0 0 15px rgba(255, 102, 0, 0.05);
         }
-        .
-[29.05.2026 23:42] CASPER: btn-so2:hover {
-            color: #fff;
+        .btn-so2:hover {
+[29.05.2026 23:48] CASPER: color: #fff;
             background: rgba(255, 102, 0, 0.2);
             border-color: #ff6600;
             box-shadow: 0 0 25px rgba(255, 102, 0, 0.5);
@@ -150,7 +148,7 @@
             transform: translateY(-3px);
         }
 
-        /* 2. ТЕЛЕГРАМ (Блакитна) */
+        /* БЛАКИТНА (TELEGRAM) */
         .btn-telegram {
             color: #33b5ff;
             background: rgba(0, 136, 204, 0.05);
@@ -166,7 +164,7 @@
             transform: translateY(-3px);
         }
 
-        /* 3. ТІКТОК (Рожева) */
+        /* РОЖЕВА (TIKTOK) */
         .btn-tiktok {
             color: #ff3377;
             background: rgba(255, 0, 80, 0.05);
@@ -182,7 +180,7 @@
             transform: translateY(-3px);
         }
 
-        /* Іконки SVG */
+        /* Іконки всередині кнопок */
         .btn svg {
             width: 22px;
             height: 22px;
