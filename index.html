@@ -1,4 +1,4 @@
-[29.05.2026 22:19] CASPER: <!DOCTYPE html>
+[29.05.2026 23:15] CASPER: <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,6 @@
             position: relative;
         }
 
-        /* КОНТЕЙНЕР ДЛЯ ЛОКАЛЬНОГО ВІДЕО-ФОНУ */
         .video-bg-container {
             position: absolute;
             top: 0;
@@ -41,7 +40,6 @@
             object-fit: cover;
         }
 
-        /* Темний матовий фільтр поверх відео */
         .video-overlay {
             position: absolute;
             top: 0;
@@ -52,19 +50,17 @@
             z-index: 2;
         }
 
-        /* Формат екрана телефона */
+        /* Контейнер під телефон — тепер усе зафіксовано строго по центру */
         .phone-wrapper {
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 390px;
-            height: 100vh;
-            max-height: 844px;
+            max-width: 360px; /* Трохи звузили, щоб на будь-якому телефоні виглядало акуратно */
             display: flex;
             flex-direction: column;
             justify-content: center; 
             align-items: center;     
-            padding: 40px 25px;
+            padding: 20px;
             animation: phoneFadeIn 1.2s ease-out forwards;
             opacity: 0;
         }
@@ -74,11 +70,10 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
-        /* Кругле лого по центру */
         .logo-container {
             width: 160px;
             height: 160px;
-            margin-bottom: 15px; /* Зменшено відступ, щоб напис був ближче */
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,7 +94,6 @@
             box-shadow: 0 0 35px rgba(255, 102, 0, 0.7);
         }
 
-        /* ПРИКОЛЬНИЙ ОРАНЖЕВИЙ НЕОНОВИЙ НАПИС N911 */
         .clan-neon-text {
             font-family: 'Orbitron', sans-serif;
             font-size: 32px;
@@ -107,39 +101,38 @@
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 40px; /* Відступ перед кнопками */
+            margin-bottom: 35px;
             text-align: center;
-            
-            /* Ефект яскравого помаранчевого неонового світіння */
             text-shadow: 
                 0 0 5px #fff,
                 0 0 10px #ff6600,
                 0 0 20px #ff6600,
-                0 0 40px #ff3300,
-                0 0 60px #ff3300;
+                0 0 40px #ff3300;
             animation: neonPulse 2s infinite alternate;
         }
 
         @keyframes neonPulse {
             0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 40px #ff3300; }
-            100% { text-shadow: 0 0 7px #fff, 0 0 15px #ff8833, 0 0 30px #ff6600, 0 0 50px #ff3300, 0 0 80px #ff3300; }
+            100% { text-shadow: 0 0 7px #fff, 0 0 15px #ff8833, 0 0 30px #ff6600, 0 0 50px #ff3300; }
         }
 
-        /* Контейнер кнопок */
+        /* Блок з кнопками — тепер чітко центрує внутрішні елементи */
         .links-container {
             width: 100%;
             display: flex;
             flex-direction: column;
+            align-items: center; /* Вирівнює самі кнопки по центру */
             gap: 16px;
         }
 
-        /* Скляні кнопки */
+        /* Виправлені скляні кнопки */
         .btn {
-[29.05.2026 22:19] CASPER: display: flex;
+            display: flex;
             align-items: center;
             justify-content: center; 
             gap: 12px;
-            width: 100%;
+            width: 100%; /* Займають всю ширину телефонного контейнера */
+[29.05.2026 23:15] CASPER: max-width: 290px; /* Кнопки не будуть занадто широкими */
             padding: 16px;
             text-decoration: none;
             color: #ffffff;
@@ -155,7 +148,6 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Кнопка КЛАН СО2 — при наведенні стає ПОМАРАНЧЕВОЮ */
         .btn-so2:hover {
             border-color: #ff6600;
             background: rgba(255, 102, 0, 0.15);
@@ -164,7 +156,6 @@
             transform: translateY(-2px);
         }
 
-        /* ТГ кнопка — при наведенні стає СИНЬОЮ */
         .btn-telegram:hover {
             border-color: #0088cc;
             background: rgba(0, 136, 204, 0.15);
@@ -173,7 +164,6 @@
             transform: translateY(-2px);
         }
 
-        /* ТТ кнопка — при наведенні стає ЧЕРВОНОЮ */
         .btn-tiktok:hover {
             border-color: #ff0050;
             background: rgba(255, 0, 80, 0.15);
@@ -186,6 +176,7 @@
             width: 22px;
             height: 22px;
             fill: currentColor;
+            flex-shrink: 0; /* Щоб іконка не стискалася */
         }
     </style>
 </head>
@@ -222,8 +213,7 @@
 
             <a href="https://www.tiktok.com/@clan_n911" target="_blank" class="btn btn-tiktok">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.95.14 1.93.12 2.92.1v3.91c-.96-.01-1.93-.16-2.85-.47-.46-.15-.9-.37-1.32-.64-.03 2.87-.01 5.74-.02 8.61-.07 1.2-.42 2.39-1.05 3.42-.64.99-1.57 1.77-2.66 2.23-1.29.54-2.73.68-4.1.39-1.3-.24-2.5-.95-3.38-1.95-.97-1.05-1.47-2.47-1.41-3.89.04-1.44.64-2.84 1.68-3.82 1.13-1.03 2.67-1.58 4.21-1.49.02 1.34-.01 2.69-.01 4.03-1.01-.15-2.08.21-2.69 1.05-.53.69-.64 1.63-.31 2.45.31.81 1.07 1.41 1.94 1.51.9.13 1.83-.24 2.
-[29.05.2026 22:19] CASPER: 34-.99.38-.52.5-1.18.47-1.83-.02-3.8-.01-7.61-.01-11.42z"/>
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.95.14 1.93.12 2.92.1v3.91c-.96-.01-1.93-.16-2.85-.47-.46-.15-.9-.37-1.32-.64-.03 2.87-.01 5.74-.02 8.61-.07 1.2-.42 2.39-1.05 3.42-.64.99-1.57 1.77-2.66 2.23-1.29.54-2.73.68-4.1.39-1.3-.24-2.5-.95-3.38-1.95-.97-1.05-1.47-2.47-1.41-3.89.04-1.44.64-2.84 1.68-3.82 1.13-1.03 2.67-1.58 4.21-1.49.02 1.34-.01 2.69-.01 4.03-1.01-.15-2.08.21-2.69 1.05-.53.69-.64 1.63-.31 2.45.31.81 1.07 1.41 1.94 1.51.9.13 1.83-.24 2.34-.99.38-.52.5-1.18.47-1.83-.02-3.8-.01-7.61-.01-11.42z"/>
                 </svg>
                 TT N911
             </a>
